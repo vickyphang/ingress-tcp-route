@@ -1,0 +1,13 @@
+ports:
+  ep-1:
+    port: 10001
+    expose:
+      default: true
+    exposedPort: 10001
+    protocol: TCP
+  ep-2:
+    port: 10002
+    expose:
+      default: true
+    exposedPort: 10002
+    protocol: TCP
