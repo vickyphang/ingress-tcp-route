@@ -82,3 +82,40 @@ apt install mariadb-client -y
 # Connect to mariadb
 mariadb -h <loadbalancer-ip>  -P 10001 -u root -psuper-secret
 ```
+
+## Add or remove traefik entrypoint
+Whenever you want to `add` or `remove` `entrypoint`, just edit the `values.yaml` and run `helm upgrade --values values.yaml traefik traefik/traefik`.
+
+- Add new `entrypoint`
+```yaml
+# values.yaml
+ports:
+  ep-1:
+    port: 10001
+    expose:
+      default: true
+    exposedPort: 10001
+    protocol: TCP
+  ep-2:                     # entrypoint name
+    port: 10002             # new port
+    expose:                 
+      default: true
+    exposedPort: 10002      # new port
+    protocol: TCP
+```
+
+- Remove `entrypoint` `ep-1`
+```yaml
+# values.yaml
+ports:
+  ep-2:
+    port: 10002
+    expose:                 
+      default: true
+    exposedPort: 10002
+    protocol: TCP
+```
+
+
+## Consideration
+You could `expose all` traefik `ports` for convenience, even there are no services running behind those ports. Keep in mind that `maximum` number of ports that can be exposed is `2768`. 
