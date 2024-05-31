@@ -1,0 +1,7 @@
+controller:
+  service:
+    enableHttp: true
+
+tcp:
+  "10001": "default/service-1:3306"
+  "10002": "namespace-two/service-2:5432"
