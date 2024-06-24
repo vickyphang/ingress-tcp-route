@@ -1,6 +1,5 @@
 # K8S Ingress for TCP Services 🔱
-[![GitHub license](https://img.shields.io/github/license/vickyphang/ingress-tcp-route)](https://github.com/vickyphang/ingress-tcp-route/blob/main/LICENSE)
-![GitHub stars](https://img.shields.io/github/stars/vickyphang/ingress-tcp-route)
+
 
 <p align="center"> <img src="images/topology.png"> </p>
 
